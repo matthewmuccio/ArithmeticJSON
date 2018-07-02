@@ -36,8 +36,12 @@ def multiply():
 
 @controller.route("/divide", methods=["GET"])
 def divide():
-    num1 = request.args.get("num1", default=0.0, type=float)
-    num2 = request.args.get("num2", default=0.0, type=float)
-    expression = "{0} / {1}".format(num1, num2)
-    result = "{0}".format(num1 / num2)
+    try:
+        num1 = request.args.get("num1", default=0.0, type=float)
+        num2 = request.args.get("num2", default=0.0, type=float)
+        expression = "{0} / {1}".format(num1, num2)
+        result = "{0}".format(num1 / num2)
+    except ZeroDivisionError:
+        expression = "{0} / {1}".format(num1, num2)
+        result = "Error: Divide by zero."
     return jsonify(expression=expression, result=result)
