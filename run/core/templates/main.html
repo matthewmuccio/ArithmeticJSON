@@ -6,7 +6,28 @@
 </head>
 
 <body>
-    <h1>ArithmeticJSON</h1>
+    <h1 style="text-align: center;">ArithmeticJSON</h1>
+    <h2 style="text-align: center; margin-top: -1.5rem;"><a href="http://www.matthewmuccio.com/" target="_blank">Matthew Muccio</a></h1>
+
+    <h2 style="text-align: center;">A simple API with endpoints for the arithmetic operations (/add, /subtract, /multiply, /divide), which will perform the calculation, and return the result in a JSON response.</h2>
+
+    <p>Each endpoint will use the *request* object to check for two arguments in the query string: "num1" and "num2."</p>
+
+    <p>The endpoint will perform appropriate arithmetic on the arguments and return a JSON response with keys "expression" and "result."</p>
+
+    <ul>
+        <li>The value of "expression" is a string of the operation performed.</li>
+        <li>The value of "result" is the result of using the appropriate mathematical operator.</li>
+    </ul>
+
+    <p>For example, the URL <a href="/add?num1=50&num2=75">"http://localhost:5000/add?num1=50&num2=75"</a> should show this response:</p>
+
+    <code>
+        {<br>
+            "expression": "50.0 + 75.0",<br>
+            "result": "125.0"<br>
+        }<br>
+    </code>
 </body>
 
 </html>

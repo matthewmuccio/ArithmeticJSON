@@ -22,7 +22,7 @@ should show this response
 
 ```
 {
-  "expression": "50 + 75",
-  "result": "125"
+  "expression": "50.0 + 75.0",
+  "result": "125.0"
 }
 ```
